@@ -6,8 +6,11 @@ includelib \masm32\lib\Kernel32.lib
 includelib \masm32\lib\User32.lib
 
 .data
+
+
 .code
 main PROC
+
     mov eax,2
     sub eax,2 
     call DumpRegs
