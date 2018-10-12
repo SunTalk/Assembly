@@ -5,6 +5,10 @@ Includelib \masm32\lib\Irvine32.lib
 includelib \masm32\lib\Kernel32.lib
 includelib \masm32\lib\User32.lib
 
+;in IDE mod:
+;TITLE MASM(test.asm)
+;include Irvine32.inc
+
 .data
 
 
@@ -14,7 +18,7 @@ main PROC
 	mov eax,2
 	sub eax,2 
 	call DumpRegs
-
+	
 	exit
 	
 main ENDP
