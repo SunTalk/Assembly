@@ -11,10 +11,9 @@ includelib \masm32\lib\User32.lib
 .code
 main PROC
 
-	mov eax,2
-	sub eax,2 
+	mov eax,5
+	add eax,6
 	call DumpRegs
-
 	exit
 	
 main ENDP
