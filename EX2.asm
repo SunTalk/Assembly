@@ -11,10 +11,18 @@ includelib \masm32\lib\User32.lib
 
 .data
 
+myBytes BYTE 10h,20h,30h,40h
+myWords WORD 2000h
+myString BYTE "ABCDE"
+
 
 .code
 main PROC
 
+	mov eax, LENGTHOF myString
+	call dumpRegs
+	mov eax, type myString
+	call dumpRegs
 
 	exit
 	
