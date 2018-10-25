@@ -11,43 +11,36 @@ includelib \masm32\lib\User32.lib
 
 .data
 
-startarr DWORD 10,20,30,40,50,60,70,80
-count EQU (LENGTHOF startarr)
-endarr DWORD count DUP(0)
-
+firstarray WORD 1,3,5,7,9,11,13
+count EQU (LENGTHOF firstarray)
+endarray DWORD count DUP (0)
+	
 .code
 main PROC
 	
-	mov ecx ,count/2
 	mov esi,0
+	mov ecx,count
+	mov eax,0
+	mov edi,0
 
 L1:
-	mov eax,startarr[esi]
-	mov endarr[esi+4],eax
-	mov eax,startarr[esi+4]
-	mov endarr[esi],eax
-	add esi,8
+	mov ax,firstarray[esi]
+	mov endarray[edi],eax
+	add esi,2
+	add edi,4
 	loop L1
 
+	call crlf
 	mov esi,0
 	mov ecx,count
 L2:
-	mov eax,startarr[esi]
+	mov eax,endarray[esi]
 	call writedec
 	call crlf
 	add esi,4
 	loop L2
 
-	mov esi,0
-	mov ecx,count
-	call crlf
-L3:
-	mov eax,endarr[esi]
-	call writedec
-	call crlf
-	add esi,4
-	loop L3
-	
+	call dumpregs
 
 	exit
 	
