@@ -48,7 +48,7 @@ main PROC
 L1:
 	mov arrayBYTE[esi],al
 	add eax,1
-	add esi,2
+	add esi,1
 	loop L1
 
 	mov eax,N2
@@ -58,21 +58,21 @@ L1:
 
 	mov esi,0
 	mov edi,ecx
-	add edi,ecx
-	sub edi,2
+	sub edi,1
 	mov eax,0
 
 L2:
 	mov al,arrayBYTE[esi]
 	mov reversearrayBYTE[edi],al
-	add esi,2
-	sub edi,2
+	add esi,1
+	sub edi,1
 	loop L2
 
 	mov eax,N2
 	sub eax,N1
 	mov ecx,eax
 	add ecx,1
+
 	mov esi,0
 	mov ebx,0
 	mov eax,0
@@ -84,7 +84,7 @@ L3:
 	add ebx,eax
 	call writedec
 	call crlf
-	add esi,2
+	add esi,1
 	loop L3
 
 	mov eax,ebx
