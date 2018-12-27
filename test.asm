@@ -7,27 +7,40 @@ includelib \masm32\lib\User32.lib
 
 .data
 
-var1 SBYTE -4,-2,3,1
-var2 WORD 1000h,2000h,3000h,4000h
-var3 SWORD -16,-42
-var4 DWORD 1,2,3,4,5
+array SWORD 8,2,3,5,-4,6,0,4
 
 .code
 main PROC
-
-	push 10
-	push 20
-	call Ex2Sub
-	pop eax
-	INVOKE ExitProcess,0
-
-	exit
 	
-main ENDP
+	mov eax,0
+	mov ebx,0
+	mov ecx,0
+	mov edx,0
 
-Ex2Sub PROC
-	; pop eax
-	ret
-Ex2Sub ENDP
+	mov cx,1
+	mov esi,2
+	mov ax,array[esi]
+	mov bx,array[esi+4]
+
+	call dumpregs
+
+	cmp ax,3
+	jae L2
+	cmp bx,4
+	jb L1
+	jmp L3
+
+	L1: 
+		mov cx,4
+	L2: 
+		mov dx,5
+		jmp L4
+	L3: mov dx,6
+	L4:
+
+	call dumpregs
+	
+	exit
+main ENDP
 
 END main
