@@ -15,7 +15,7 @@ includelib \masm32\lib\User32.lib
 	Vowels BYTE "Vowels: " ,0,0ah,0dh
 	Consonants BYTE "Consonants: ",0,0ah,0dh
 	Digits BYTE "Digits: " ,0,0ah,0dh
-	White BYTE "White spaces: ",0,0ah,0dh
+	Spaces BYTE "White spaces: ",0,0ah,0dh
 	len DWORD 0
 	num1 DWORD 0
 	num2 DWORD 0
@@ -28,10 +28,13 @@ check proto,
 .code
 main PROC
 	
+
 	mov edx,offset input
 	call writestring
 	call crlf
+	
 	mov edx,offset need
+	mov ecx,150
 	call readstring
 	mov len,eax
 	
@@ -55,7 +58,7 @@ main PROC
 	call writedec
 	call crlf
 
-	mov edx,offset White
+	mov edx,offset Spaces
 	call writestring
 	mov eax,num4
 	call writedec
@@ -68,21 +71,25 @@ main ENDP
 check PROC,
 	use: PTR BYTE
 
-	mov esi,0
+	mov esi,use
 	mov ecx,len
 
 	L1:
-		.if( use[esi] == 'a' ) || ( use[esi] =='e') || ( use[esi] =='i') || ( use[esi] =='o') || ( use[esi] =='u') || ( use[esi] =='A') || ( use[esi] =='E') || ( use[esi] =='I') || ( use[esi] =='O') || ( use[esi] =='U')
+		mov bl,BYTE ptr[esi]
+		.if( bl == 'a' ) || ( bl =='e') || ( bl =='i') || ( bl =='o') || ( bl =='u') || ( bl =='A') || ( bl =='E') || ( bl =='I') || ( bl =='O') || ( bl =='U')
 			add num1,1
-		.elseif(use[esi]>='a' ) && ( use[esi]<='z') || (use[esi]>='A') && (use[esi]<='Z')
+		.elseif(bl>='a' ) && ( bl<='z') || (bl>='A') && (bl<='Z')
 			add num2,1
-		.elseif(use[esi]>='0') && (use[esi]<='9')
+		.elseif(bl>='0') && (bl<='9')
 			add num3,1
-		.elseif(use[esi]==' ')
+		.elseif(bl==' ')
 			add num4,1
 		.endif
-
-
+		add esi,1
+		; call dumpregs
+	dec cx
+	jne L1
+	ret
 check ENDP
 
 END main
