@@ -10,11 +10,11 @@ includelib \masm32\lib\User32.lib
 ;include Irvine32.inc
 
 .data
-	need BYTE ?
-	intput1 BYTE "Enter a string: ",0,0ah,0dh
-	intput2 BYTE "Enter a character to find the frequency: ",0,0ah,0dh
-	output1 BYTE "Frequency of ",0,0ah,0dh
-	output2 BYTE " = ",0,0ah,0dh
+	need BYTE ?,0dh,0ah,0
+	intput1 BYTE "Enter a string: ",0dh,0ah,0
+	intput2 BYTE "Enter a character to find the frequency: ",0dh,0ah,0
+	output1 BYTE "Frequency of ",0
+	output2 BYTE " = ",0
 	char BYTE ?
 	len DWORD ?
 	ans DWORD ?

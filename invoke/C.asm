@@ -10,12 +10,12 @@ includelib \masm32\lib\User32.lib
 ;include Irvine32.inc
 
 .data
-	need BYTE ?
-	input BYTE "Enter a line of string: ",0,0ah,0dh
-	Vowels BYTE "Vowels: " ,0,0ah,0dh
-	Consonants BYTE "Consonants: ",0,0ah,0dh
-	Digits BYTE "Digits: " ,0,0ah,0dh
-	Spaces BYTE "White spaces: ",0,0ah,0dh
+	need BYTE ?,0dh,0ah,0
+	input BYTE "Enter a line of string: ",0dh,0ah,0
+	Vowels BYTE "Vowels: " ,0
+	Consonants BYTE "Consonants: ",0
+	Digits BYTE "Digits: " ,0
+	Spaces BYTE "White spaces: ",0
 	len DWORD 0
 	num1 DWORD 0
 	num2 DWORD 0

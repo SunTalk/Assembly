@@ -11,9 +11,9 @@ includelib \masm32\lib\User32.lib
 
 .data
 	
-	intput BYTE "Enter a three digit integer: ",0,0ah,0dh
-	output1 BYTE " is an Armstrong number.",0,0ah,0dh
-	output2 BYTE " is not an Armstrong number.",0,0ah,0dh
+	intput BYTE "Enter a three digit integer: ",0dh,0ah,0
+	output1 BYTE " is an Armstrong number.",0dh,0ah,0
+	output2 BYTE " is not an Armstrong number.",0dh,0ah,0
 	num DWORD 0
 	tmp DWORD 0
 	ans DWORD 0
@@ -26,7 +26,6 @@ main PROC
 	
 	mov edx,offset intput
 	call writestring
-	call crlf
 	call readint
 	mov num,eax
 
@@ -42,7 +41,6 @@ main PROC
 	mov eax,num
 	call writedec
 	call writestring
-	call crlf
 
 	exit
 	

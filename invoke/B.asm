@@ -11,10 +11,10 @@ includelib \masm32\lib\User32.lib
 
 .data
 	
-	intput BYTE "Enter an alphabet: ",0,0ah,0dh
-	output1 BYTE " is a vowel." ,0,0ah,0dh
-	output2 BYTE " is a consonant." ,0,0ah,0dh
-	check BYTE "aeiouAEIOU" ,0,0ah,0dh
+	intput BYTE "Enter an alphabet: ",0dh,0ah,0
+	output1 BYTE " is a vowel." ,0dh,0ah,0
+	output2 BYTE " is a consonant." ,0dh,0ah,0
+	check BYTE "aeiouAEIOU" ,0dh,0ah,0
 	char BYTE ?
 
 alphabet proto,
