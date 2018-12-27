@@ -10,12 +10,12 @@ includelib \masm32\lib\User32.lib
 
 .data
 
-	String byte ?
+	String byte 1000 DUP (0)
 	input  byte "Enter a String: ",0
 	output byte "Output String: ",0
 
-	targetStr byte ?
-	len    Dword ?
+	targetStr byte 1000 DUP (0)
+	len Dword ?
 
 remove proto,
 	use: PTR byte,

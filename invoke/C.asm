@@ -10,7 +10,7 @@ includelib \masm32\lib\User32.lib
 ;include Irvine32.inc
 
 .data
-	need BYTE ?,0dh,0ah,0
+	need BYTE 1000 DUP (0)
 	input BYTE "Enter a line of string: ",0dh,0ah,0
 	Vowels BYTE "Vowels: " ,0
 	Consonants BYTE "Consonants: ",0

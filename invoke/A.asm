@@ -10,7 +10,7 @@ includelib \masm32\lib\User32.lib
 ;include Irvine32.inc
 
 .data
-	need BYTE ?,0dh,0ah,0
+	need BYTE 1000 DUP (0)
 	intput1 BYTE "Enter a string: ",0dh,0ah,0
 	intput2 BYTE "Enter a character to find the frequency: ",0dh,0ah,0
 	output1 BYTE "Frequency of ",0

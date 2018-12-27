@@ -11,11 +11,11 @@ includelib \masm32\lib\User32.lib
 
 .data
 	
-	need BYTE ?,0
+	need BYTE 1000 DUP (0)
 	intput BYTE "Enter a string: ",0dh,0ah,0
 	output BYTE "Output String: ",0dh,0ah,0
 	len DWORD 0
-	after BYTE ?
+	after BYTE 1000 DUP (0)
 
 remove PROTO,
 	use: PTR BYTE
