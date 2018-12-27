@@ -71,7 +71,7 @@ str_find proc,
 	mov esi,use
 
 	L1:
-		cmp BYTE ptr[esi],bl
+		cmp [esi],bl
 		je thesame
 		jmp other
 

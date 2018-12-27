@@ -56,7 +56,7 @@ alphabet proc,
 	mov ecx,10
 
 	L1:
-		cmp BYTE ptr[esi],bl
+		cmp [esi],bl
 		je thesame
 		jmp other
 

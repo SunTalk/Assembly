@@ -75,7 +75,7 @@ check PROC,
 	mov ecx,len
 
 	L1:
-		mov bl,BYTE ptr[esi]
+		mov bl,[esi]
 		.if( bl == 'a' ) || ( bl =='e') || ( bl =='i') || ( bl =='o') || ( bl =='u') || ( bl =='A') || ( bl =='E') || ( bl =='I') || ( bl =='O') || ( bl =='U')
 			add num1,1
 		.elseif(bl>='a' ) && ( bl<='z') || (bl>='A') && (bl<='Z')
