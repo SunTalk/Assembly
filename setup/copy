@@ -1,0 +1,11 @@
+將
+Irvine32.inc
+SmallWin.inc
+VirtualKeys.inc
+三個文件複製到 masm32 的 include 資料夾裡面
+
+將
+Irvine32.lib
+文件複製到 masm32 的 lib 資料夾裡面
+
+設定環境變數
